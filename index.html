@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Simulación de Segmentación y Multiplexación</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Simulación de Segmentación y Multiplexación</h1>
+        <div class="row w-75 mt-3">
+            <h3>Ingresa el mensaje a enviar</h3>
+            <div class="input-group my-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-blockquote-left"></i></span>
+                <input type="text" class="form-control" id="message" placeholder="Mensaje a enviar" aria-label="Mensaje a enviar" aria-describedby="basic-addon1">
+                <button type="button" class="btn btn-outline-primary" onclick="getMessage()">Enviar</button>
+            </div>
+        </div>
+        <div class="row w-75">
+            <h3>Proceso de segmentación</h3>
+            <p>1. El mensaje a enviar se convierte en binario</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-file-binary-fill"></i></span>
+                <input type="text" class="form-control" id="messageBin" placeholder="Mensaje en binario" aria-label="Mensaje en binario" aria-describedby="basic-addon1" disabled>
+                <button type="button" onclick="copyText()"  class="btn btn-primary" id="btnCopy" disabled
+                        data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" data-bs-content="Copiado">
+                        Copiar
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Bootstrap JS complements -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<!-- DOM JS -->
+<script src="src/tools.js"></script>
+<script src="src/index.js"></script>
