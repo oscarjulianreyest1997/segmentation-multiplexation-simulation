@@ -125,3 +125,23 @@ function mux(unorderSegments){
    orderSegments = orderSegments.sort((a, b) => (a.id > b.id) ? 1 : -1)
    console.log(orderSegments);
 }
+
+function MsgFinal(orderSegments){
+    console.log(orderSegments);
+    var result = "";
+    let cadena = "";
+    const mensajebin = orderSegments.map(function(msg) {
+        return msg.txt;
+    });
+
+  for (var i = 0; i < mensajebin.length; i++) {
+     cadena += mensajebin[i] + " ";
+  }
+
+  result=cadena.split(" ").map(function(elem) {
+    return String.fromCharCode(parseInt(elem, 2));
+  }).join("")
+
+  console.log(result);
+
+}
