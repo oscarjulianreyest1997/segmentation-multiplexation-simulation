@@ -142,6 +142,10 @@ function MsgFinal(orderSegments){
     return String.fromCharCode(parseInt(elem, 2));
   }).join("")
 
+<<<<<<< Updated upstream
   console.log(result);
 
 }
+=======
+  console.log(result);
+>>>>>>> Stashed changes
