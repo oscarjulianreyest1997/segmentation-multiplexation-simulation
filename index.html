@@ -12,15 +12,15 @@
 <body>
     <div class="container">
         <h1 class="text-center my-4">Simulación de Segmentación y Multiplexación</h1>
-        <div class="row w-75 mt-3">
-            <h3>Ingresa el mensaje a enviar</h3>
+        <div class="row mt-3 m-auto">
+            <h3>Mensaje a enviar</h3>
             <div class="input-group my-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-blockquote-left"></i></span>
-                <input type="text" class="form-control" id="message" placeholder="Mensaje a enviar" aria-label="Mensaje a enviar" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" id="message" placeholder="Ingresa el mensaje a enviar" aria-label="Ingresa el mensaje a enviar" aria-describedby="basic-addon1">
                 <button type="button" class="btn btn-outline-primary" onclick="getMessage()">Enviar</button>
             </div>
         </div>
-        <div class="row w-75">
+        <div class="row m-auto mt-3 post">
             <h3>Proceso de segmentación</h3>
             <p>1. El mensaje a enviar se convierte en binario</p>
             <div class="input-group mb-3">
@@ -32,24 +32,25 @@
                 </button>
             </div>
         </div>
-
-        <div class="row w-75">
+        <div class="row m-auto mt-3 post">
             <p>2. Mensaje segmentado con cabeceras</p>
-            <div class="row w-75 px-5">
-                <ol id="segmetnList">
-                </ol>
+            <div id="segmetnList" class="row px-4">
+            </div>
+            <p class="fst-italic mt-2 samllF">Nota: El simbolo guion (-) es únicamente ilustrativo, los paquetes solo contienen números binarios compuesto por la cabecera o identificador y la porción del mensaje convertida a binario</p>
+        </div>
+
+        <div class="row m-auto mt-3 post">
+            <h3>Proceso de envio de paquetes - MUX</h3>
+            <p>1. El MUX escoge aleatoreamente que paquete enviar, el orden escogido para esto caso es le siguiente</p>
+            <div id="muxList" class="row px-4">
             </div>
         </div>
 
-        <div class="row w-75">
-            <h3>Proceso de envio de paquetes MUX</h3>
-        </div>
-
-        <div class="row w-75">
+        <div class="row m-auto mt-3 post">
             <h3>Proceso de ordenamiento de paquetes</h3>
         </div>
 
-        <div class="row w-75">
+        <div class="row m-auto mt-3 post">
             <h3>Mensaje Final</h3>
         </div>
     </div>

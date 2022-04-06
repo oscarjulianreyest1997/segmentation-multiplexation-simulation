@@ -1,10 +1,9 @@
-let ol = document.getElementById("segmetnList");
+let groupList = document.getElementById("segmetnList");
+let visible = document.getElementsByClassName('post');
 
 function getMessage(){
 
-    while (ol.firstChild) {
-        ol.removeChild(ol.firstChild);
-    }
+    groupList.innerHTML = "";
 
     let txt = document.getElementById("message").value;
     if(txt == ""){
@@ -42,15 +41,19 @@ function BinarioADecimal(num) {
     for (let i = 0; i < num.length; i++) {
        sum += +num[i] * 2 ** (num.length - 1 - i);
     }
+
     return sum;
 }
 
-
 function messageBinary(txt){
-    //ASCII/UTF-8
     let binary = toBinary(txt);
     document.getElementById('messageBin').value = binary;
     document.getElementById('btnCopy').disabled = false;
+    
+    for (const v of visible) {
+        v.style.visibility = "visible";
+    }
+
     segmentation(binary.trim());
 }
 
@@ -69,12 +72,24 @@ function copyText() {
 function segmentation(txt){
     let segments = txt.split(" ");
     let segmentsWID = [];
+    let c = 0;
+    let ul = document.createElement('ul');
+    ul.setAttribute('class','list-group list-group-horizontal m-auto');    
+    groupList.appendChild(ul);
 
     for (let i = 0; i < segments.length; i++) {
+        c++;
+        if(c === 7){
+            ul = document.createElement('ul');
+            ul.setAttribute('class','list-group list-group-horizontal m-auto');
+            groupList.appendChild(ul);
+            c = 0;    
+        }
         let li = document.createElement("li");
         segmentsWID.push(toBinary(i,1) + segments[i]);
-        li.appendChild(document.createTextNode(toBinary(i,1) + segments[i] + ""));
-        ol.appendChild(li);
+        li.appendChild(document.createTextNode(toBinary(i,1) + "-" + segments[i] + ""));
+        li.setAttribute("class", "list-group-item");
+        ul.appendChild(li);
     }
 
     sendPackage(segmentsWID);
@@ -89,6 +104,9 @@ function sendPackage(segments){
     while (numbers.length > 0) {
         unorderSegments.push(segments[numbers.pop()]);
     }
+
+    
+
 
     mux(unorderSegments);
 }

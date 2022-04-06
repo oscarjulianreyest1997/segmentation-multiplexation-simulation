@@ -1,3 +1,11 @@
 .brd{
     border: solid 1px black;
 }
+
+.post{
+    /* visibility : hidden; */
+}
+
+.samllF{
+    font-size: 14px;
+}
